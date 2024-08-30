@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# This is the playground for the EH Next Steps page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Testing new ideas, pushing limits, and seeing what we can cook up!
 
 ## Available Scripts
 
