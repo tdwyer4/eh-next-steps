@@ -1,15 +1,15 @@
 import React from "react";
 import "./HomePage.css";
-import EHLogo from "../assets/svg/EH-Logo-BG";
+import { useScroll } from "framer-motion";
+import { useRef } from "react";
+import SectionOne from "./SectionOne";
+import SectionTwo from "./SectionTwo";
 
 function HomePage() {
   return (
     <div className="mainContainer">
-      <EHLogo />
-      <div className="headerContainer">
-        <h2>We'll take it from here</h2>
-        <h6>You did the easy part – Here's what's next.</h6>
-      </div>
+      <SectionOne />
+      <SectionTwo />
     </div>
   );
 }
