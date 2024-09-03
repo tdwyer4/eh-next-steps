@@ -75,3 +75,8 @@
     margin-top: 0;
 
 }
+
+.parallaxStyling {
+    /* height: 150vh; */
+    position: relative;
+}

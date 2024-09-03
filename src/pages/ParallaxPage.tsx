@@ -1,6 +1,7 @@
 import React, { ReactNode, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "./ParallaxPage.css";
+import SplineHero from "./SplineHero";
 // import { FiArrowUpRight } from "react-icons/fi";
 
 export const TextParallaxContentExample = () => {
@@ -15,7 +16,7 @@ export const TextParallaxContentExample = () => {
       </TextParallaxContent>
       <TextParallaxContent
         imgUrl="https://placehold.co/2671x1780"
-        subheading=""
+        subheading="COPYYYYYYYYY"
         heading=""
       >
         <ExampleContent />
@@ -51,7 +52,7 @@ const TextParallaxContent = ({
         paddingRight: IMG_PADDING,
       }}
     >
-      <div className="relative h-[150vh]">
+      <div className="parallaxStyling">
         <StickyImage imgUrl={imgUrl} />
         <OverlayCopy heading={heading} subheading={subheading} />
       </div>
