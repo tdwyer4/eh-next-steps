@@ -8,23 +8,23 @@ export const TextParallaxContentExample = () => {
   return (
     <div className="bg-white">
       <TextParallaxContent
-        imgUrl="https://placehold.co/2671x1780/1A2229/293139?text=Background"
+        imgUrl="https://placehold.co/2671x1780/222222/293139?text=Background"
         subheading="You did the hard part - we'll take it from here"
         heading="What's Next?"
       >
         <ExampleContent />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://placehold.co/2671x1780"
+        imgUrl="https://placehold.co/2671x1780/3E454C/566069?text=Section+2"
         subheading="COPYYYYYYYYY"
-        heading=""
+        heading="and MORE copyyyyyyyy!"
       >
         <ExampleContent />
       </TextParallaxContent>
       <TextParallaxContent
-        imgUrl="https://placehold.co/2671x1780"
-        subheading=""
-        heading=""
+        imgUrl="https://placehold.co/2671x1780/3E454C/566069?text=Section+3"
+        subheading="COPYYYYYYYYY"
+        heading="and EVEN MORE copyyyyyyyy!"
       >
         <ExampleContent />
       </TextParallaxContent>
@@ -32,7 +32,7 @@ export const TextParallaxContentExample = () => {
   );
 };
 
-const IMG_PADDING = 12;
+const IMG_PADDING = 0;
 
 const TextParallaxContent = ({
   imgUrl,
