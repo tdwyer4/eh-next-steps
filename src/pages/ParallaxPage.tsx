@@ -9,8 +9,8 @@ export const TextParallaxContentExample = () => {
     <div className="bg-white">
       <TextParallaxContent
         imgUrl="https://placehold.co/2671x1780/222222/293139?text=Background"
-        subheading="You did the hard part - we'll take it from here"
-        heading="What's Next?"
+        subheading="You did the hard part."
+        heading="We'll take it from here."
       >
         <ExampleContent />
       </TextParallaxContent>
