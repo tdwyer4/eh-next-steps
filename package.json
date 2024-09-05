@@ -4,6 +4,8 @@
   "homepage": "https://tdwyer4.github.io/eh-next-steps",
   "private": true,
   "dependencies": {
+    "@react-three/drei": "^9.112.0",
+    "@react-three/fiber": "^8.17.6",
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.9.22",
     "@testing-library/jest-dom": "^5.17.0",
@@ -13,10 +15,12 @@
     "@types/node": "^16.18.106",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
+    "classnames": "^2.5.1",
     "framer-motion": "^11.3.31",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
+    "three": "^0.168.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
