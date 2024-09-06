@@ -1,53 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./ImageCarousel.module.css";
-import classNames from "classnames";
+import images from "../images";
 
-const images = [
-  "/images/image1.jpg",
-  "/images/image2.jpg",
-  "/images/image3.jpg",
-  "/images/image4.jpg",
-  "/images/image5.jpg",
-  "/images/image6.jpg",
-  "/images/image7.jpg",
-  "/images/image8.jpg",
-  "/images/image9.jpg",
-  "/images/image10.jpg",
-];
+type Card = {
+  id: number;
+  imgSrc: string;
+};
 
-const Carousel: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+function Carousel() {
+  const [cards, setCards] = useState<Card[]>([]);
+  const sliderRef = useRef<HTMLDivElement>(null);
 
-  const prevSlide = () => {
-    setActiveIndex(activeIndex === 0 ? images.length - 1 : activeIndex - 1);
+  const handleScroll = () => {
+    if (sliderRef.current) {
+      const scrollPos = window.scrollY;
+      const initialTransform = `translate3d(-50%, -50%, 0) rotateX(0deg) rotateY(-25deg) rotateZ(-120deg)`;
+      const zOffset = scrollPos * 0.5;
+      sliderRef.current.style.transform = `${initialTransform} translateY(${zOffset}px)`;
+    }
   };
 
-  const nextSlide = () => {
-    setActiveIndex(activeIndex === images.length - 1 ? 0 : activeIndex + 1);
+  const handleMouseOver = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.style.left = "15%";
   };
+
+  const handleMouseOut = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.style.left = "0%";
+  };
+
+  useEffect(() => {
+    const newCards = images.map((img, index) => ({
+      id: index + 1,
+      imgSrc: img,
+    }));
+
+    setCards(newCards);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className={styles.carousel}>
-      {images.map((image, index) => (
+    <div className={styles.slider} ref={sliderRef}>
+      {cards.map((card) => (
         <div
-          key={index}
-          className={classNames(styles.carouselItem, {
-            [styles.active]: index === activeIndex,
-          })}
-          style={{ backgroundImage: `url(${image})` }}
+          key={card.id}
+          className={styles.card}
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
         >
-          <p>Image {index + 1}</p>
-          <div />
+          <img src={card.imgSrc} alt={`img${card.id}`} />
         </div>
       ))}
-      <button className={styles.prev} onClick={prevSlide}>
-        ‹
-      </button>
-      <button className={styles.next} onClick={nextSlide}>
-        ›
-      </button>
     </div>
   );
-};
+}
 
 export default Carousel;

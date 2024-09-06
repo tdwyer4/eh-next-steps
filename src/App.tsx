@@ -9,7 +9,6 @@ import Carousel from "./components/ImageCarousel";
 function App() {
   return (
     <>
-      <Carousel />
       <SplineHero />
       <TextParallaxContentExample />
     </>
